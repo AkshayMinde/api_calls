@@ -5,6 +5,9 @@ const _ = require('lodash');
 
 const app = express();
 
+app.get('/', (req,res) => {
+    res.send('Blogs_Search_Site');
+})
 app.get(`/api/blog-stats`, async(req,res) => {
     try {
         const blogs = await axios.get('https://intent-kit-16.hasura.app/api/rest/blogs',{
